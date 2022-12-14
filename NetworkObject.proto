@@ -1,11 +1,9 @@
 syntax = "proto3";
 
-
 option java_package = "networking";
 option java_outer_classname = "NetworkObjects";
 
 import "google/protobuf/empty.proto";
-import "google/api/annotations.proto";
 
 message NetworkEvent{
   string event = 1;
@@ -20,10 +18,18 @@ message NetworkData{
   repeated NetworkData children = 3;
 }
 
+enum STATUS{
+  ACTIVE = 0;
+  INACTIVE = 1;
+  UNHEALTH = 2;
+}
+
 message Health{
-  bool healthy = 1;
-  string id = 2;
+  string id = 1;
+  STATUS status = 2;
   int32 connections = 3;
+  int32 inactive_time = 4;
+  int32 uptime = 5;
 }
 message Version{
   string version = 1;
