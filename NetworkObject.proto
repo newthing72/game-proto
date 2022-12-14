@@ -21,7 +21,7 @@ message NetworkData{
 enum STATUS{
   ACTIVE = 0;
   INACTIVE = 1;
-  UNHEALTH = 2;
+  UNHEALTHY = 2;
 }
 
 message Health{
