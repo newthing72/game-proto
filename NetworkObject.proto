@@ -28,8 +28,8 @@ message Health{
   string id = 1;
   STATUS status = 2;
   int32 connections = 3;
-  int32 inactive_time = 4;
-  int32 uptime = 5;
+  int64 inactive_time = 4;
+  int64 uptime = 5;
 }
 message Version{
   string version = 1;
